@@ -162,7 +162,7 @@ Table of Contents
    transport if appropriate, before issuing the query.
 
    The presence of this flag does not guarantee that the corresponding
-   SVCB record is actually present.
+   SVCB records are actually present.
 
 3.2.  Menu form
 
