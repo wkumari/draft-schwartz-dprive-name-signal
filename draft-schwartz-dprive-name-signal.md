@@ -43,17 +43,15 @@ Some recent proposals to the DPRIVE working group rely on the use of SVCB record
 
 # Background
 
-{{!I-D.draft-schwartz-svcb-dns}} defines how to use SVCB records to describe the secure transport protocols supported by a DNS server.  {{?I-D.draft-ietf-dprive-unauth-to-authoritative}} describes the use of such records on the names of nameservers (the "NS name") to enable opportunistic encryption of recursive-to-authoritative DNS queries.  Resolvers are permitted to fetch SVCB records asynchronously and cache them, resulting in "partial opportunistic encryption": even without an active adversary forcing a downgrade, some queries will sometimes be sent in cleartext.
+{{!I-D.draft-schwartz-svcb-dns}} defines how to use SVCB records to describe the secure transport protocols supported by a DNS server.  {{?I-D.draft-ietf-dprive-unauth-to-authoritative}} describes the use of such records on the names of nameservers (the "NS name") to enable opportunistic encryption of recursive-to-authoritative DNS queries.  Resolvers are permitted to fetch SVCB records asynchronously and cache them, resulting in "partial opportunistic encryption": even without an active adversary forcing a downgrade, some queries will sometimes be sent in cleartext.  Participating authoritative nameservers and recursive resolvers would have to be modified to make use of these records.
 
 When the child zone is DNSSEC-signed, publishing a SVCB record of this kind is technically sufficient to enable authenticated encryption.  However, in order to support reliable authentication, recursive resolvers would have to query for a SVCB record on every signed delegation, and wait for a response before issuing their intended query.  We call this behavior a "synchronous binding check".
 
-Many validating resolvers might not be willing to enable a "synchronous binding check" behavior, as this would slow down resolution of many existing domains in order to enable a new feature (authenticated encryption) that is not yet used at all.  To enable authenticated encryption without this general performance loss, {{?I-D.draft-rescorla-dprive-adox-latest}} proposes to deliver the SVCB records from the parent, in the delegation response.  This avoids the need for a binding check, but it requires modifications to the parent nameserver, which must provide these additional records in delegation responses, as well as recursive software to accept this data.
+Many validating resolvers might not be willing to enable a "synchronous binding check" behavior, as this would slow down resolution of many existing domains in order to enable a new feature (authenticated encryption) that is not yet used at all.  To enable authenticated encryption without this general performance loss, {{?I-D.draft-rescorla-dprive-adox-latest}} proposes to deliver the SVCB records from the parent, in the delegation response.  This avoids the need for a binding check, at the cost of additionally requiring modifications to the parent nameserver, which must provide these extra records in delegation responses.
 
 Providing these additional records is sufficient to enable "full opportunistic encryption": the transport is always encrypted in the absence of an active adversary.  However, these records are not protected by DNSSEC, so the child can only achieve fully authenticated encryption if the parent also implements fully authenticated encryption or otherwise protects the delivery of these records.
 
 Even if this approach is standardized, many parent zones may not support delivery of SVCB records in delegation responses in the near future.  To enable the broadest use of encrypted transport, we may need an interim solution that can be deployed more easily.
-
-We note that encoding semantics in DNS labels is a hack; but believe that the security benefits overcome the ick factor.
 
 # Proposal
 
@@ -61,13 +59,15 @@ We propose to indicate a nameserver's support for encrypted transports using a s
 
 > QUESTION: Do we need both of these forms, or should we drop one?
 
+We note that encoding semantics in DNS labels is a hack, but believe that the privacy benefits outweigh the ick factor.
+
 In either form, the signal helps resolvers to acquire a SVCB RRSet for the nameserver.  Resolvers use this RRSet as specified in {{I-D.draft-rescorla-dprive-adox-latest}}.
 
 ## Flag form
 
 If the NS name's first label is `svcb`, this is regarded as a "flag".  When contacting a flagged nameserver, participating resolvers SHOULD perform a synchronous binding check, and upgrade to a secure transport if appropriate, before issuing the query.
 
-The presence of this flag does not guarantee that the corresponding SVCB record is actually present.
+The presence of this flag does not guarantee that the corresponding SVCB records are actually present.
 
 ## Menu form
 
