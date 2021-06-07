@@ -1,6 +1,6 @@
 ---
-title: "Indicating Authoritative Server Transports with Interim In-Name Signals"
-abbrev: "In-Name Signals"
+title: "Nameserver Access Modes with Encryption Held in Alphanumeric Configuration Keys"
+abbrev: "NAMEHACK"
 docname: draft-schwartz-dprive-name-signal-latest
 category: exp
 
@@ -53,7 +53,7 @@ Providing these additional records is sufficient to enable "full opportunistic e
 
 Even if this approach is standardized, many parent zones may not support delivery of SVCB records in delegation responses in the near future.  To enable the broadest use of encrypted transport, we may need an interim solution that can be deployed more easily.
 
-We note that encoding semantics in DNS labels is a hack; but believe that the security benefits overcome the ick factor. 
+We note that encoding semantics in DNS labels is a hack; but believe that the security benefits overcome the ick factor.
 
 # Proposal
 
