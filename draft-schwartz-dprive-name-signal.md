@@ -67,7 +67,7 @@ In either form, the signal helps resolvers to acquire a SVCB RRSet for the names
 
 If the NS name's first label is `svcb`, this is regarded as a "flag".  When contacting a flagged nameserver, participating resolvers SHOULD perform a synchronous binding check, and upgrade to a secure transport if appropriate, before issuing the query.
 
-The presence of this flag does not guarantee that the corresponding SVCB record is actually present.
+The presence of this flag does not guarantee that the corresponding SVCB records are actually present.
 
 ## Menu form
 
