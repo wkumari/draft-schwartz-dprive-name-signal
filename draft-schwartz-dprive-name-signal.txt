@@ -14,12 +14,12 @@ Indicating Authoritative Server Transports with Interim In-Name Signals
 Abstract
 
    Some recent proposals to the DPRIVE working group rely on the use of
-   SVCB records to provide instructions about how to reach a nameserver
-   over an encrypted transport.  These proposals seem likely to be
-   difficult to deploy until the parent domain's delegation software
-   have been modified to support these records.  As an interim solution
-   for these domains, this draft proposes encoding relevant signals in
-   the child's NS-name.
+   SVCB records to provide instructions about how to reach an
+   authoritative nameserver over an encrypted transport.  These
+   proposals will be difficult to deploy until the parent domain's
+   delegation software has been modified to support these records.  As
+   an interim solution for these domains, this draft proposes encoding
+   relevant signals in the child's NS-name.
 
 Discussion Venues
 
@@ -122,7 +122,7 @@ Table of Contents
    records from the parent, in the delegation response.  This avoids the
    need for a binding check, but it requires modifications to the parent
    nameserver, which must provide these additional records in delegation
-   responses.
+   responses, as well as recursive software to accept this data.
 
    Providing these additional records is sufficient to enable "full
    opportunistic encryption": the transport is always encrypted in the
@@ -136,6 +136,9 @@ Table of Contents
    support delivery of SVCB records in delegation responses in the near
    future.  To enable the broadest use of encrypted transport, we may
    need an interim solution that can be deployed more easily.
+
+   We note that encoding semantics in DNS labels is a hack; but believe
+   that the security benefits overcome the ick factor.
 
 3.  Proposal
 
@@ -231,7 +234,7 @@ Table of Contents
 
 6.  IANA Considerations
 
-   IANA is instructed to create a new registry entitled "Authoritative
+   IANA is requested to create a new registry entitled "Authoritative
    Server Transport In-Name Signal Characters", with the following
    fields:
 
