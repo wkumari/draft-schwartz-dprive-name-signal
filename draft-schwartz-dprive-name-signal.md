@@ -33,7 +33,7 @@ informative:
 
 --- abstract
 
-Some recent proposals to the DPRIVE working group rely on the use of SVCB records to provide instructions about how to reach a nameserver over an encrypted transport.  These proposals seem likely to be difficult to deploy until the parent domain's delegation software have been modified to support these records.  As an interim solution for these domains, this draft proposes encoding relevant signals in the child's NS-name.
+Some recent proposals to the DPRIVE working group rely on the use of SVCB records to provide instructions about how to reach an authoritative nameserver over an encrypted transport.  These proposals will be difficult to deploy until the parent domain's delegation software has been modified to support these records.  As an interim solution for these domains, this draft proposes encoding relevant signals in the child's NS-name.
 
 --- middle
 
@@ -47,11 +47,13 @@ Some recent proposals to the DPRIVE working group rely on the use of SVCB record
 
 When the child zone is DNSSEC-signed, publishing a SVCB record of this kind is technically sufficient to enable authenticated encryption.  However, in order to support reliable authentication, recursive resolvers would have to query for a SVCB record on every signed delegation, and wait for a response before issuing their intended query.  We call this behavior a "synchronous binding check".
 
-Many validating resolvers might not be willing to enable a "synchronous binding check" behavior, as this would slow down resolution of many existing domains in order to enable a new feature (authenticated encryption) that is not yet used at all.  To enable authenticated encryption without this general performance loss, {{?I-D.draft-rescorla-dprive-adox-latest}} proposes to deliver the SVCB records from the parent, in the delegation response.  This avoids the need for a binding check, but it requires modifications to the parent nameserver, which must provide these additional records in delegation responses.
+Many validating resolvers might not be willing to enable a "synchronous binding check" behavior, as this would slow down resolution of many existing domains in order to enable a new feature (authenticated encryption) that is not yet used at all.  To enable authenticated encryption without this general performance loss, {{?I-D.draft-rescorla-dprive-adox-latest}} proposes to deliver the SVCB records from the parent, in the delegation response.  This avoids the need for a binding check, but it requires modifications to the parent nameserver, which must provide these additional records in delegation responses, as well as recursive software to accept this data.
 
 Providing these additional records is sufficient to enable "full opportunistic encryption": the transport is always encrypted in the absence of an active adversary.  However, these records are not protected by DNSSEC, so the child can only achieve fully authenticated encryption if the parent also implements fully authenticated encryption or otherwise protects the delivery of these records.
 
 Even if this approach is standardized, many parent zones may not support delivery of SVCB records in delegation responses in the near future.  To enable the broadest use of encrypted transport, we may need an interim solution that can be deployed more easily.
+
+We note that encoding semantics in DNS labels is a hack; but believe that the security benefits overcome the ick factor. 
 
 # Proposal
 
@@ -107,7 +109,7 @@ If a pre-existing NS name contains the menu pattern, that nameserver will become
 
 # IANA Considerations {#iana}
 
-IANA is instructed to create a new registry entitled "Authoritative Server Transport In-Name Signal Characters", with the following fields:
+IANA is requested to create a new registry entitled "Authoritative Server Transport In-Name Signal Characters", with the following fields:
 
 * Character: a digit or lower-case letter
 * SvcParams: a valid SVCB SvcParams set in presentation format
