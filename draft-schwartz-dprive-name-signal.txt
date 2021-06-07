@@ -5,7 +5,7 @@
 dprive                                                       B. Schwartz
 Internet-Draft                                                 W. Kumari
 Intended status: Standards Track                              Google LLC
-Expires: 4 December 2021                                     2 June 2021
+Expires: 9 December 2021                                     7 June 2021
 
 
 Indicating Authoritative Server Transports with Interim In-Name Signals
@@ -47,7 +47,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 December 2021.
+   This Internet-Draft will expire on 9 December 2021.
 
 Copyright Notice
 
@@ -102,9 +102,9 @@ Table of Contents
    such records on the names of nameservers (the "NS name") to enable
    opportunistic encryption of recursive-to-authoritative DNS queries.
    Resolvers are permitted to fetch SVCB records asynchronously and
-   cache them, resulting in "partial opportunistic encryption": even in
-   the absence of an active adversary, queries will sometimes be sent in
-   cleartext.
+   cache them, resulting in "partial opportunistic encryption": even
+   without an active adversary forcing a downgrade, some queries will
+   sometimes be sent in cleartext.
 
    When the child zone is DNSSEC-signed, publishing a SVCB record of
    this kind is technically sufficient to enable authenticated
@@ -129,7 +129,7 @@ Table of Contents
    absence of an active adversary.  However, these records are not
    protected by DNSSEC, so the child can only achieve fully
    authenticated encryption if the parent also implements fully
-   authenticated encryption, or otherwise protects the delivery of these
+   authenticated encryption or otherwise protects the delivery of these
    records.
 
    Even if this approach is standardized, many parent zones may not
