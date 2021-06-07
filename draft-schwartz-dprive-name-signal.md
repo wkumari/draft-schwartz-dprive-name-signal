@@ -2,7 +2,7 @@
 title: "Indicating Authoritative Server Transports with Interim In-Name Signals"
 abbrev: "In-Name Signals"
 docname: draft-schwartz-dprive-name-signal-latest
-category: std
+category: exp
 
 ipr: trust200902
 area: General
