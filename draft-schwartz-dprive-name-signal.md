@@ -1,6 +1,6 @@
 ---
-title: "Indicating Authoritative Server Transports with Interim In-Name Signals"
-abbrev: "In-Name Signals"
+title: "Nameserver Access Modes with Encryption Held in Alphanumeric Configuration Keys"
+abbrev: "NAMEHACK"
 docname: draft-schwartz-dprive-name-signal-latest
 category: exp
 
