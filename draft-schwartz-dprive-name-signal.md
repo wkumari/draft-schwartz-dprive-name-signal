@@ -78,8 +78,8 @@ If the NS name's first label starts with `svcb--`, the label's subsequent charac
 
 For example, the name "svcb--qt.ns3.example." would be decoded to this RRSet:
 
-    _dns.svcb--tq.ns3.example. IN SVCB 1 svcb--tq.ns3.example. alpn=doq
-    _dns.svcb--tq.ns3.example. IN SVCB 2 svcb--tq.ns3.example. alpn=dot
+    _dns.svcb--qt.ns3.example. IN SVCB 1 svcb--qt.ns3.example. alpn=doq
+    _dns.svcb--qt.ns3.example. IN SVCB 2 svcb--qt.ns3.example. alpn=dot
 
 The menu characters are a-z and 0-9; all other characters are reserved for future use.  Upon encountering any character outside these ranges, parsers MUST stop and return successfully.
 
