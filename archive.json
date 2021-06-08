@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-06-06T00:10:50.389084+00:00",
+  "timestamp": "2021-06-08T00:14:39.518123+00:00",
   "repo": "wkumari/draft-schwartz-dprive-name-signal",
   "labels": [
     {
@@ -50,5 +50,140 @@
     }
   ],
   "issues": [],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 1,
+      "id": "MDExOlB1bGxSZXF1ZXN0NjYzODQxMjU5",
+      "title": "Status: Exp, firming up language",
+      "url": "https://github.com/wkumari/draft-schwartz-dprive-name-signal/pull/1",
+      "state": "MERGED",
+      "author": "wkumari",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Random thoughts, feel free to ignore, stomp, etc.\r\n",
+      "createdAt": "2021-06-07T19:02:15Z",
+      "updatedAt": "2021-06-07T19:06:13Z",
+      "baseRepository": "wkumari/draft-schwartz-dprive-name-signal",
+      "baseRefName": "main",
+      "baseRefOid": "89ff919132a69428d317be3b9a261af7a5fdf050",
+      "headRepository": "wkumari/draft-schwartz-dprive-name-signal",
+      "headRefName": "Tightening_up",
+      "headRefOid": "080772209ad7b966538cda4e962c39b8e56bc804",
+      "closedAt": "2021-06-07T19:06:13Z",
+      "mergedAt": "2021-06-07T19:06:13Z",
+      "mergedBy": "bemasc",
+      "mergeCommit": {
+        "oid": "5dc19960a0c37ae6555dc23c805dea283096d6c4"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3Njc3Nzg4NjEw",
+          "commit": {
+            "abbreviatedOid": "0807722"
+          },
+          "author": "bemasc",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2021-06-07T19:06:02Z",
+          "updatedAt": "2021-06-07T19:06:02Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "id": "MDExOlB1bGxSZXF1ZXN0NjYzODUyMjE5",
+      "title": "Minor wording suggestions",
+      "url": "https://github.com/wkumari/draft-schwartz-dprive-name-signal/pull/2",
+      "state": "MERGED",
+      "author": "bemasc",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2021-06-07T19:19:59Z",
+      "updatedAt": "2021-06-07T21:32:29Z",
+      "baseRepository": "wkumari/draft-schwartz-dprive-name-signal",
+      "baseRefName": "main",
+      "baseRefOid": "5dc19960a0c37ae6555dc23c805dea283096d6c4",
+      "headRepository": "wkumari/draft-schwartz-dprive-name-signal",
+      "headRefName": "wording",
+      "headRefOid": "2724fcab9e5cf4443b6c976f9248689fdca42f45",
+      "closedAt": "2021-06-07T21:32:23Z",
+      "mergedAt": "2021-06-07T21:32:23Z",
+      "mergedBy": "wkumari",
+      "mergeCommit": {
+        "oid": "4199c9d24cacefd228883767d3fe7d7163f506d8"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3Njc3OTAyOTE0",
+          "commit": {
+            "abbreviatedOid": "2724fca"
+          },
+          "author": "wkumari",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "Thanks.",
+          "createdAt": "2021-06-07T21:32:17Z",
+          "updatedAt": "2021-06-07T21:32:17Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "id": "MDExOlB1bGxSZXF1ZXN0NjYzODY5MjE0",
+      "title": "NAMEHACK",
+      "url": "https://github.com/wkumari/draft-schwartz-dprive-name-signal/pull/3",
+      "state": "MERGED",
+      "author": "bemasc",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Here's one way to convey the apology.",
+      "createdAt": "2021-06-07T19:51:40Z",
+      "updatedAt": "2021-06-07T21:35:25Z",
+      "baseRepository": "wkumari/draft-schwartz-dprive-name-signal",
+      "baseRefName": "main",
+      "baseRefOid": "4199c9d24cacefd228883767d3fe7d7163f506d8",
+      "headRepository": "wkumari/draft-schwartz-dprive-name-signal",
+      "headRefName": "namehack",
+      "headRefOid": "05a8358fc8c5606801d41840efa6197901c39271",
+      "closedAt": "2021-06-07T21:35:25Z",
+      "mergedAt": "2021-06-07T21:35:25Z",
+      "mergedBy": "wkumari",
+      "mergeCommit": {
+        "oid": "fb5ebac1c8e6e9a3798ee8c4b3d4f73afcc0f881"
+      },
+      "comments": [
+        {
+          "author": "wkumari",
+          "authorAssociation": "OWNER",
+          "body": "Gurk, got a merge conflict around the \"ick\" text, think I resolved it in the right order.",
+          "createdAt": "2021-06-07T21:35:17Z",
+          "updatedAt": "2021-06-07T21:35:17Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3Njc3OTA0ODU5",
+          "commit": {
+            "abbreviatedOid": "67c9583"
+          },
+          "author": "wkumari",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2021-06-07T21:33:33Z",
+          "updatedAt": "2021-06-07T21:33:33Z",
+          "comments": []
+        }
+      ]
+    }
+  ]
 }
