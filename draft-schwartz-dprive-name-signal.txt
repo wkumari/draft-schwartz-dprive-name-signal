@@ -269,6 +269,14 @@ Table of Contents
 
 7.1.  Normative References
 
+   [I-D.draft-rescorla-dprive-adox-latest]
+              Pauly, T., Rescorla, E., Schinazi, D., and C. A. Wood,
+              "Signaling Authoritative DNS Encryption", Work in
+              Progress, Internet-Draft, draft-rescorla-dprive-adox-
+              latest-00, 26 February 2021,
+              <https://datatracker.ietf.org/doc/html/draft-rescorla-
+              dprive-adox-latest-00.txt>.
+
    [I-D.draft-schwartz-svcb-dns]
               Schwartz, B., "Service Binding Mapping for DNS Servers",
               Work in Progress, Internet-Draft, draft-schwartz-svcb-dns-
@@ -314,14 +322,6 @@ Table of Contents
               levine-dprive-signal-02, 17 November 2019,
               <https://datatracker.ietf.org/doc/html/draft-levine-
               dprive-signal-02.txt>.
-
-   [I-D.draft-rescorla-dprive-adox-latest]
-              Pauly, T., Rescorla, E., Schinazi, D., and C. A. Wood,
-              "Signaling Authoritative DNS Encryption", Work in
-              Progress, Internet-Draft, draft-rescorla-dprive-adox-
-              latest-00, 26 February 2021,
-              <https://datatracker.ietf.org/doc/html/draft-rescorla-
-              dprive-adox-latest-00.txt>.
 
    [I-D.draft-vandijk-dnsop-ds-digest-verbatim]
               Dijk, P. V., "The VERBATIM Digest Algorithm for DS
