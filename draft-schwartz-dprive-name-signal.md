@@ -43,7 +43,7 @@ Some recent proposals to the DPRIVE working group rely on the use of SVCB record
 
 # Background
 
-{{!I-D.draft-schwartz-svcb-dns}} defines how to use SVCB records to describe the secure transport protocols supported by a DNS server.  {{?I-D.draft-ietf-dprive-unauth-to-authoritative}} describes the use of such records on the names of nameservers (the "NS name") to enable opportunistic encryption of recursive-to-authoritative DNS queries.  Resolvers are permitted to fetch SVCB records asynchronously and cache them, resulting in "partial opportunistic encryption": even without an active adversary forcing a downgrade, some queries will sometimes be sent in cleartext.  Participating authoritative nameservers and recursive resolvers would have to be modified to make use of these records.
+{{!I-D.draft-schwartz-svcb-dns}} defines how to use SVCB records to describe the secure transport protocols supported by a DNS server.  {{?I-D.draft-ietf-dprive-unauth-to-authoritative}} describes the use of such records on the names of nameservers (the "NS name") to enable opportunistic encryption of recursive-to-authoritative DNS queries.  Resolvers are permitted to fetch SVCB records asynchronously and cache them, resulting in "partial opportunistic encryption": even without an active adversary forcing a downgrade, queries will sometimes be sent in cleartext.  Participating authoritative nameservers and recursive resolvers would have to be modified to make use of these records.
 
 When the child zone is DNSSEC-signed, publishing a SVCB record of this kind is technically sufficient to enable authenticated encryption.  However, in order to support reliable authentication, recursive resolvers would have to query for a SVCB record on every signed delegation, and wait for a response before issuing their intended query.  We call this behavior a "synchronous binding check".
 
@@ -85,7 +85,7 @@ _dns.svcb--qt.ns3.example. IN SVCB 1 svcb--qt.ns3.example. alpn=doq
 _dns.svcb--qt.ns3.example. IN SVCB 2 svcb--qt.ns3.example. alpn=dot
 ~~~
 
-The menu characters are a-z and 0-9; all other characters are reserved for future use.  Upon encountering any character outside these ranges, parsers MUST stop and return successfully.
+The menu characters are a-z and 0-9; all other characters are reserved for future use.  Upon encountering any character outside these ranges, parsers MUST stop and return successfully.  Parsers MUST ignore characters that are allowed but not recognized.
 
 > QUESTION: Do we need more than 36 codepoints?  Is there a nice simple format that would give us a lot more codepoints?
 
