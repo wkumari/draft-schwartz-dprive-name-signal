@@ -80,7 +80,7 @@ If the NS name's first label starts with `svcb--`, the label's subsequent charac
 
 For example, the name "svcb--qt.ns3.example." would be decoded to this RRSet:
 
-~~~ DNS Zone
+~~~
 _dns.svcb--qt.ns3.example. IN SVCB 1 svcb--qt.ns3.example. alpn=doq
 _dns.svcb--qt.ns3.example. IN SVCB 2 svcb--qt.ns3.example. alpn=dot
 ~~~
