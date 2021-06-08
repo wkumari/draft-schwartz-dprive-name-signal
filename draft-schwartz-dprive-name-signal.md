@@ -78,7 +78,7 @@ If the NS name's first label starts with `svcb--`, the label's subsequent charac
 * The TargetName is the NS name
 * The SvcParams are indicated in the registry entry for this menu character ({{iana}}).
 
-For example, the name "svcb--qt.ns3.example." would be decoded to this RRSet:
+For example, the name `svcb--qt.ns3.example.` would be decoded to this RRSet:
 
 ~~~
 _dns.svcb--qt.ns3.example. IN SVCB 1 svcb--qt.ns3.example. alpn=doq
