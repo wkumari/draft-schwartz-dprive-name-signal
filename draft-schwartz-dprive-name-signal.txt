@@ -5,7 +5,7 @@
 dprive                                                       B. Schwartz
 Internet-Draft                                                 W. Kumari
 Intended status: Experimental                                 Google LLC
-Expires: 9 December 2021                                     7 June 2021
+Expires: 10 December 2021                                    8 June 2021
 
 
       Nameserver Access Modes with Encryption Held in Alphanumeric
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 9 December 2021.
+   This Internet-Draft will expire on 10 December 2021.
 
 Copyright Notice
 
@@ -104,7 +104,7 @@ Table of Contents
    opportunistic encryption of recursive-to-authoritative DNS queries.
    Resolvers are permitted to fetch SVCB records asynchronously and
    cache them, resulting in "partial opportunistic encryption": even
-   without an active adversary forcing a downgrade, some queries will
+   without an active adversary forcing a downgrade, queries will
    sometimes be sent in cleartext.  Participating authoritative
    nameservers and recursive resolvers would have to be modified to make
    use of these records.
@@ -192,7 +192,8 @@ Table of Contents
 
    The menu characters are a-z and 0-9; all other characters are
    reserved for future use.  Upon encountering any character outside
-   these ranges, parsers MUST stop and return successfully.
+   these ranges, parsers MUST stop and return successfully.  Parsers
+   MUST ignore characters that are allowed but not recognized.
 
       QUESTION: Do we need more than 36 codepoints?  Is there a nice
       simple format that would give us a lot more codepoints?
