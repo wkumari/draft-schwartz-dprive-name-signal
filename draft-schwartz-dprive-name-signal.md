@@ -61,7 +61,7 @@ We propose to indicate a nameserver's support for encrypted transports using a s
 
 We note that encoding semantics in DNS labels is a hack, but believe that the privacy benefits outweigh the ick factor.
 
-In either form, the signal helps resolvers to acquire a SVCB RRSet for the nameserver.  Resolvers use this RRSet as specified in {{I-D.draft-rescorla-dprive-adox-latest}}.
+In either form, the signal helps resolvers to acquire a SVCB RRSet for the nameserver.  Resolvers use this RRSet as specified in {{!I-D.draft-rescorla-dprive-adox-latest}}.
 
 ## Flag form
 
@@ -93,7 +93,7 @@ The menu characters are a-z and 0-9; all other characters are reserved for futur
 
 ## Implementation requirements
 
-Resolvers that implement support for "menu" mode MUST also support the "flag" mode.  Resolvers that support either mode MUST also support {{I-D.draft-rescorla-dprive-adox-latest}}, and ignore the in-name signal if any SVCB records are included in a delegation response.
+Resolvers that implement support for "menu" mode MUST also support the "flag" mode.  Resolvers that support either mode MUST also support {{!I-D.draft-rescorla-dprive-adox-latest}}, and ignore the in-name signal if any SVCB records are included in a delegation response.
 
 When possible, zones SHOULD use SVCB records in the delegation response and omit any in-name signal.
 
