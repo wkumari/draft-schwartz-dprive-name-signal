@@ -71,7 +71,7 @@ The presence of this flag does not guarantee that the corresponding SVCB records
 
 ## Menu form
 
-If the NS name's first label starts with `svcb--`, the label's subsequent characters represent a "menu" of connection options, which can be decoded into a SVCB RRSet.  To decode the RRSet, each character is transformed into a SVCB RR with the following components:
+If the NS name's first label starts with `svcb--`, the label's subsequent characters represent a "menu" of connection options, which can be decoded into a SVCB RRSet.  To produce the RRSet, each character is transformed into a SVCB RR with the following components:
 
 * The owner name is the NS name plus the prefix label "_dns".
 * The SvcPriority is the character's order in the list (starting at 1)
