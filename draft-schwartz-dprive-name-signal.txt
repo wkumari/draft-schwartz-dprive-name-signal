@@ -5,7 +5,7 @@
 dprive                                                       B. Schwartz
 Internet-Draft                                                 W. Kumari
 Intended status: Experimental                                 Google LLC
-Expires: 10 December 2021                                    8 June 2021
+Expires: 11 December 2021                                    9 June 2021
 
 
       Nameserver Access Modes with Encryption Held in Alphanumeric
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 December 2021.
+   This Internet-Draft will expire on 11 December 2021.
 
 Copyright Notice
 
@@ -169,7 +169,7 @@ Table of Contents
 
    If the NS name's first label starts with "svcb--", the label's
    subsequent characters represent a "menu" of connection options, which
-   can be decoded into a SVCB RRSet.  To decode the RRSet, each
+   can be decoded into a SVCB RRSet.  To produce the RRSet, each
    character is transformed into a SVCB RR with the following
    components:
 
