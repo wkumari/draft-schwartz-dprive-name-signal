@@ -183,10 +183,10 @@ Table of Contents
    *  The SvcParams are indicated in the registry entry for this menu
       item (Section 6).
 
-   For example, the name "svcb--doq-dot.ns3.example." would be decoded
-   to this RRSet:
+   For example, the name "svcb--doq-dot.ns3.example.com." would be
+   decoded to this RRSet:
 
-   $ORIGIN example.
+   $ORIGIN example.com.
    _dns.svcb--doq-dot.ns3 IN SVCB 1 svcb--doq-dot.ns3 alpn=doq
                           IN SVCB 2 svcb--doq-dot.ns3 alpn=dot
 
