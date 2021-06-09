@@ -45,7 +45,7 @@ Some recent proposals to the DPRIVE working group rely on the use of SVCB record
 
 {{!I-D.draft-schwartz-svcb-dns}} defines how to use SVCB records to describe the secure transport protocols supported by a DNS server.  {{?I-D.draft-ietf-dprive-unauth-to-authoritative}} describes the use of such records on the names of nameservers (the "NS name") to enable opportunistic encryption of recursive-to-authoritative DNS queries.  Resolvers are permitted to fetch SVCB records asynchronously and cache them, resulting in "partial opportunistic encryption": even without an active adversary forcing a downgrade, queries will sometimes be sent in cleartext.  Participating authoritative nameservers and recursive resolvers would have to be modified to make use of these records.
 
-When the child zone is DNSSEC-signed, publishing a SVCB record of this kind is technically sufficient to enable authenticated encryption.  However, in order to support reliable authentication, recursive resolvers would have to query for a SVCB record on every signed delegation, and wait for a response before issuing their intended query.  We call this behavior a "synchronous binding check".
+When the child zone is DNSSEC-signed, publishing a SVCB record of this kind is technically sufficient to enable authenticated encryption.  However, in order to support reliable authentication, recursive resolvers would have to revalidate the NS name and resolve its SVCB records on every signed delegation before issuing their intended query.  We call this behavior a "synchronous binding check".
 
 Many validating resolvers might not be willing to enable a "synchronous binding check" behavior, as this would slow down resolution of many existing domains in order to enable a new feature (authenticated encryption) that is not yet used at all.  To enable authenticated encryption without this general performance loss, {{?I-D.draft-rescorla-dprive-adox-latest}} proposes to deliver the SVCB records from the parent, in the delegation response.  This avoids the need for a binding check, at the cost of additionally requiring modifications to the parent nameserver, which must provide these extra records in delegation responses.
 
@@ -65,9 +65,11 @@ In either form, the signal helps resolvers to acquire a SVCB RRSet for the names
 
 ## Flag form
 
-If the NS name's first label is `svcb`, this is regarded as a "flag".  When contacting a flagged nameserver, participating resolvers SHOULD perform a synchronous binding check, and upgrade to a secure transport if appropriate, before issuing the query.
+If the NS name's first label is `svcb`, this is regarded as a "flag".  The presence of a flag indicates that the nameserver operator encourages recursive resolvers to perform a synchronous binding check and establish a secure connection before issuing the query.  Resolvers that prefer opportunistic encryption (as in {{?I-D.draft-ietf-dprive-unauth-to-authoritative}}) MAY perform this check asynchronously instead.
 
 The presence of this flag does not guarantee that the corresponding SVCB records are actually present.
+
+Resolver implementors should take care to avoid resolution loops when performing binding checks, with special consideration for misconfigured zones.
 
 ## Menu form
 
