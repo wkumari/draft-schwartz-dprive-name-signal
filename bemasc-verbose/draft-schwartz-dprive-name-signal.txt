@@ -169,14 +169,14 @@ Table of Contents
 
    If the NS name's first label starts with "svcb--", the remainder of
    that label represents a "menu" of connection options, which can be
-   decoded into a SVCB RRSet.  To produce the RRSet, the recipients
-   first splits the remaining characters on each "-" to produce a list
-   of menu items.  Each item is transformed into a SVCB RR with the
-   following components:
+   decoded into a SVCB RRSet.  To produce the RRSet, the recipient first
+   splits the remaining characters on each "-" to produce a list of menu
+   items.  Each item is transformed into a SVCB RR with the following
+   components:
 
    *  The owner name is the NS name plus the prefix label "_dns".
 
-   *  The SvcPriority is the item's order in the list (starting at 1)
+   *  The SvcPriority is the item's position in the list (starting at 1)
 
    *  The TargetName is the NS name
 
