@@ -71,25 +71,22 @@ The presence of this flag does not guarantee that the corresponding SVCB records
 
 ## Menu form
 
-If the NS name's first label starts with `svcb--`, the label's subsequent characters represent a "menu" of connection options, which can be decoded into a SVCB RRSet.  To produce the RRSet, each character is transformed into a SVCB RR with the following components:
+If the NS name's first label starts with `svcb--`, the remainder of that label represents a "menu" of connection options, which can be decoded into a SVCB RRSet.  To produce the RRSet, the recipient first splits the remaining characters on each "-" to produce a list of menu items.  Each item is transformed into a SVCB RR with the following components:
 
 * The owner name is the NS name plus the prefix label "_dns".
-* The SvcPriority is the character's order in the list (starting at 1)
+* The SvcPriority is the item's position in the list (starting at 1)
 * The TargetName is the NS name
-* The SvcParams are indicated in the registry entry for this menu character ({{iana}}).
+* The SvcParams are indicated in the registry entry for this menu item ({{iana}}).
 
-For example, the name `svcb--qt.ns3.example.` would be decoded to this RRSet:
+For example, the name `svcb--doq-dot.ns3.example.com.` would be decoded to this RRSet:
 
 ~~~
-_dns.svcb--qt.ns3.example. IN SVCB 1 svcb--qt.ns3.example. alpn=doq
-_dns.svcb--qt.ns3.example. IN SVCB 2 svcb--qt.ns3.example. alpn=dot
+$ORIGIN example.com.
+_dns.svcb--doq-dot.ns3 IN SVCB 1 svcb--doq-dot.ns3 alpn=doq
+                       IN SVCB 2 svcb--doq-dot.ns3 alpn=dot
 ~~~
 
-The menu characters are a-z and 0-9; all other characters are reserved for future use.  Upon encountering any character outside these ranges, parsers MUST stop and return successfully.  Parsers MUST ignore characters that are allowed but not recognized.
-
-> QUESTION: Do we need more than 36 codepoints?  Is there a nice simple format that would give us a lot more codepoints?
-
-> QUESTION: Should we consider a format that actually encodes the SvcParams in the label instead?
+Menu items are case-insensitive.  Parsers MUST ignore any menu items that they do not recognize.
 
 ## Implementation requirements
 
@@ -111,21 +108,21 @@ If a pre-existing NS name contains the menu pattern, that nameserver will become
 
 # IANA Considerations {#iana}
 
-IANA is requested to create a new registry entitled "Authoritative Server Transport In-Name Signal Characters", with the following fields:
+IANA is requested to create a new registry entitled "Authoritative Server Transport Mnemonics", with the following fields:
 
-* Character: a digit or lower-case letter
+* Mnemonic: a sequence of lower-case letters and digits
 * SvcParams: a valid SVCB SvcParams set in presentation format
 
-The registry policy is **TBD**.
+The registry policy is First-Come-First-Served.  Registry entries MUST begin with a letter.
 
 The initial contents (**DO NOT USE**, subject to change) are as follows:
 
-| Character | SvcParams                        |
-| --------- | ---------                        |
-| t         | alpn=dot                         |
-| h         | alpn=h2 dohpath=/dns-query{?dns} |
-| 3         | alpn=h3 dohpath=/dns-query{?dns} |
-| q         | alpn=doq                         |
+| Mnemonic | SvcParams                        |
+| -------- | ---------                        |
+| dot      | alpn=dot                         |
+| doh      | alpn=h2 dohpath=/dns-query{?dns} |
+| doh3     | alpn=h3 dohpath=/dns-query{?dns} |
+| doq      | alpn=doq                         |
 
 --- back
 
