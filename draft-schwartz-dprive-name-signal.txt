@@ -5,7 +5,7 @@
 dprive                                                       B. Schwartz
 Internet-Draft                                                 W. Kumari
 Intended status: Experimental                                 Google LLC
-Expires: 11 December 2021                                    9 June 2021
+Expires: 13 December 2021                                   11 June 2021
 
 
       Nameserver Access Modes with Encryption Held in Alphanumeric
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 December 2021.
+   This Internet-Draft will expire on 13 December 2021.
 
 Copyright Notice
 
@@ -112,8 +112,8 @@ Table of Contents
    When the child zone is DNSSEC-signed, publishing a SVCB record of
    this kind is technically sufficient to enable authenticated
    encryption.  However, in order to support reliable authentication,
-   recursive resolvers would have to query for a SVCB record on every
-   signed delegation, and wait for a response before issuing their
+   recursive resolvers would have to revalidate the NS name and resolve
+   its SVCB records on every signed delegation before issuing their
    intended query.  We call this behavior a "synchronous binding check".
 
    Many validating resolvers might not be willing to enable a
@@ -158,12 +158,19 @@ Table of Contents
 3.1.  Flag form
 
    If the NS name's first label is "svcb", this is regarded as a "flag".
-   When contacting a flagged nameserver, participating resolvers SHOULD
-   perform a synchronous binding check, and upgrade to a secure
-   transport if appropriate, before issuing the query.
+   The presence of a flag indicates that the nameserver operator
+   encourages recursive resolvers to perform a synchronous binding check
+   and establish a secure connection before issuing the query.
+   Resolvers that prefer opportunistic encryption (as in
+   [I-D.draft-ietf-dprive-unauth-to-authoritative]) MAY perform this
+   check asynchronously instead.
 
    The presence of this flag does not guarantee that the corresponding
    SVCB records are actually present.
+
+   Resolver implementors should take care to avoid resolution loops when
+   performing binding checks, with special consideration for
+   misconfigured zones.
 
 3.2.  Menu form
 
