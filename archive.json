@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-06-10T00:03:32.621123+00:00",
+  "timestamp": "2021-06-13T00:03:56.699971+00:00",
   "repo": "wkumari/draft-schwartz-dprive-name-signal",
   "labels": [
     {
@@ -258,25 +258,42 @@
       "id": "MDExOlB1bGxSZXF1ZXN0NjY2MTk3OTYz",
       "title": "Improve guidance for resolvers",
       "url": "https://github.com/wkumari/draft-schwartz-dprive-name-signal/pull/6",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "bemasc",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "This change provides clearer text about how strictly to interpret a\r\nflagged name, and reminds resolvers to be wary of loops.",
       "createdAt": "2021-06-09T18:40:04Z",
-      "updatedAt": "2021-06-09T18:40:04Z",
+      "updatedAt": "2021-06-11T00:45:44Z",
       "baseRepository": "wkumari/draft-schwartz-dprive-name-signal",
       "baseRefName": "main",
       "baseRefOid": "3dba860804e459d3dd89a231b57e55e2ed1c952f",
       "headRepository": "wkumari/draft-schwartz-dprive-name-signal",
       "headRefName": "bemasc-strictness",
       "headRefOid": "32fd6d04e74effcce916b986613ebe2877564e56",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
+      "closedAt": "2021-06-11T00:44:27Z",
+      "mergedAt": "2021-06-11T00:44:27Z",
+      "mergedBy": "wkumari",
+      "mergeCommit": {
+        "oid": "57c0fcf21abe8c04eac620976193dc0dca0a2188"
+      },
+      "comments": [
+        {
+          "author": "wkumari",
+          "authorAssociation": "OWNER",
+          "body": "Thank you.\n",
+          "createdAt": "2021-06-11T00:44:22Z",
+          "updatedAt": "2021-06-11T00:44:22Z"
+        },
+        {
+          "author": "wkumari",
+          "authorAssociation": "OWNER",
+          "body": "Reviewed from mobile app. First time I'm using the app; seemed to go fine, but mentioning in case it exploded or something...",
+          "createdAt": "2021-06-11T00:45:44Z",
+          "updatedAt": "2021-06-11T00:45:44Z"
+        }
+      ],
       "reviews": []
     }
   ]
