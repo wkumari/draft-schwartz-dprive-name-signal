@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-06-13T00:03:56.699971+00:00",
+  "timestamp": "2021-06-15T00:03:29.037839+00:00",
   "repo": "wkumari/draft-schwartz-dprive-name-signal",
   "labels": [
     {
@@ -232,25 +232,35 @@
       "id": "MDExOlB1bGxSZXF1ZXN0NjY1OTg3NTIz",
       "title": "Move to a more verbose encoding",
       "url": "https://github.com/wkumari/draft-schwartz-dprive-name-signal/pull/5",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "bemasc",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "This encoding is slightly more complex to implement but vastly more\r\nflexible, avoiding the codepoint allocation concerns.",
       "createdAt": "2021-06-09T14:49:46Z",
-      "updatedAt": "2021-06-09T14:49:47Z",
+      "updatedAt": "2021-06-14T15:19:39Z",
       "baseRepository": "wkumari/draft-schwartz-dprive-name-signal",
       "baseRefName": "main",
       "baseRefOid": "3dba860804e459d3dd89a231b57e55e2ed1c952f",
       "headRepository": "wkumari/draft-schwartz-dprive-name-signal",
       "headRefName": "bemasc-verbose",
       "headRefOid": "6d0bcfce1931270c165c38a3e22383c27af1c626",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
+      "closedAt": "2021-06-14T15:19:30Z",
+      "mergedAt": "2021-06-14T15:19:30Z",
+      "mergedBy": "wkumari",
+      "mergeCommit": {
+        "oid": "c8c921c4d9ac170c1b6d9967156595ee426457eb"
+      },
+      "comments": [
+        {
+          "author": "wkumari",
+          "authorAssociation": "OWNER",
+          "body": "Thank you.",
+          "createdAt": "2021-06-14T15:19:36Z",
+          "updatedAt": "2021-06-14T15:19:36Z"
+        }
+      ],
       "reviews": []
     },
     {
