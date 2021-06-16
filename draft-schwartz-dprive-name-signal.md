@@ -134,7 +134,7 @@ Several other designs have been proposed to encode a transport upgrade signal in
 
 ## Indicating DoT support with a name prefix
 
-Section 3.6 of {{?I-D.draft-levine-dprive-signal-02}} discusses using the "xs--" name prefix to indicate support for DNS over TLS.  This is equivalent to a "svcb--t" label in this formulation.  This draft may be seen as an expansion of that proposal, harmonized with the SVCB-based discovery drafts.
+Section 3.6 of {{?I-D.draft-levine-dprive-signal-02}} discusses using the "xs--" name prefix to indicate support for DNS over TLS.  This is equivalent to a "svcb--dot" label in this formulation.  This draft may be seen as an expansion of that proposal, harmonized with the SVCB-based discovery drafts.
 
 ## Encoding the SPKI pin in the leaf label
 
