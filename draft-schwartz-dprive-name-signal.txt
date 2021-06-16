@@ -5,7 +5,7 @@
 dprive                                                       B. Schwartz
 Internet-Draft                                                 W. Kumari
 Intended status: Experimental                                 Google LLC
-Expires: 16 December 2021                                   14 June 2021
+Expires: 18 December 2021                                   16 June 2021
 
 
       Nameserver Access Modes with Encryption Held in Alphanumeric
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 December 2021.
+   This Internet-Draft will expire on 18 December 2021.
 
 Copyright Notice
 
@@ -352,9 +352,9 @@ A.1.  Indicating DoT support with a name prefix
 
    Section 3.6 of [I-D.draft-levine-dprive-signal-02] discusses using
    the "xs--" name prefix to indicate support for DNS over TLS.  This is
-   equivalent to a "svcb--t" label in this formulation.  This draft may
-   be seen as an expansion of that proposal, harmonized with the SVCB-
-   based discovery drafts.
+   equivalent to a "svcb--dot" label in this formulation.  This draft
+   may be seen as an expansion of that proposal, harmonized with the
+   SVCB-based discovery drafts.
 
 A.2.  Encoding the SPKI pin in the leaf label
 
